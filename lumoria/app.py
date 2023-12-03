@@ -42,6 +42,6 @@ dwg = svgwrite.Drawing('planets.svg', profile='tiny')
 colors = {"Full": "yellow", "Partial": "orange", "None": "gray", "None (Multiple Shadows)": "black"}
 
 for i, (planet, light_intensity) in enumerate(zip(planets, light_intensities)):
-    dwg.add(dwg.circle(center=(100 + i * 100, 200), r=planet["Size (km)"] / 1000, fill=colors[light_intensity]))
+    dwg.add(dwg.circle(center=(100 + i * 100, 200), r=planet["Size (km)"] / 100, fill=colors[light_intensity]))
 
 dwg.save()
