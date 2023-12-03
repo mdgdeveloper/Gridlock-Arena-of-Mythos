@@ -37,11 +37,11 @@ for planet, light_intensity in zip(planets, light_intensities):
     print(f"The planet {planet['Planet Name']} receives a light intensity of {light_intensity}")
 
 
-dwg = svgwrite.Drawing('planets.svg', profile='tiny')
+dwg = svgwrite.Drawing('planets.svg', size=(1000, 1000))
 
 colors = {"Full": "yellow", "Partial": "orange", "None": "gray", "None (Multiple Shadows)": "black"}
 
 for i, (planet, light_intensity) in enumerate(zip(planets, light_intensities)):
-    dwg.add(dwg.circle(center=(100 + i * 100, 200), r=planet["Size (km)"] / 100, fill=colors[light_intensity]))
+    dwg.add(dwg.circle(center=(100 + i * 100, 200), r=planet["Size (km)"] / 800, fill=colors[light_intensity]))
 
 dwg.save()
